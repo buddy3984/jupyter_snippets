@@ -1,0 +1,19 @@
+### start jupyter at boot crontab ###
+MAKE BASH SCRIPT
+sudo nano buddy.sh
+
+#! /bin/bash
+cd /home/pi/python_bruh && source coinbase/bin/activate 
+# virtualenv is now active.
+#
+jupyter-notebook --no-browser &
+
+
+chmod +x buddy.sh
+TEST IT
+./buddy.sh
+
+EDIT CRONTAB
+crontab -e
+@reboot /home/pi/buddy.sh
+save reboot
